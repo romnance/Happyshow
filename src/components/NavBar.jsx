@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
 
 function NavBar() {
   const Styles = styled.div`
@@ -25,6 +25,10 @@ function NavBar() {
         color: palevioletred;
       }
     }
+    .navbar-nav,
+    .navbar-toggler {
+      margin-left: auto;
+    }
   `;
 
   return (
@@ -33,9 +37,9 @@ function NavBar() {
         <Navbar.Brand href="/">Happy Shows</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav>
             <Nav.Item>
-              <Nav.Link href="/">Shows</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/myshows">My Shows</Nav.Link>

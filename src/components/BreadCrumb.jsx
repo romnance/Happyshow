@@ -9,7 +9,6 @@ function BreadCrumb() {
     .breadcrumb {
       margin: 0.55em 0.5em;
       padding: 0.35em 0.5em;
-      background: papayawhip;
       width: fit-content;
     }
     a {
