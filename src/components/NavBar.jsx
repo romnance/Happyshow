@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 
 function NavBar() {
   const Styles = styled.div`

@@ -34,11 +34,11 @@ const ShowItem = ({ image, name, rating, id }) => {
     <Styles>
       <div className="card">
         <div className="card-body">
-          <Link to={`/singleshow/${id}`}>
+          <Link to={`/pageshow/${id}`}>
             <img src={image} alt={name} />
           </Link>
           <div className="d-flex flex-row justify-content-between w-100">
-            <Link to={`/singleshow/${id}`}>
+            <Link to={`/pageshow/${id}`}>
               <h5 className="card-title mt-1">{name}</h5>
             </Link>
             <button type="button">
