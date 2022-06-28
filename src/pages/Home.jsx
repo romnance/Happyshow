@@ -43,7 +43,7 @@ function Home() {
       </Form>
 
       {shows ? (
-        <div className="">
+        <div className="d-flex flex-wrap w-100 justify-content-between mt-3">
           {shows.map((item) => (
             <ShowItem
               key={item.id || item.show.id}
