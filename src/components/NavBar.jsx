@@ -8,6 +8,7 @@ function NavBar() {
       padding: 0.55em 1em;
       border-bottom: 2px solid palevioletred;
       background: papayawhip;
+      margin-bottom: 2em;
     }
     .navbar-brand {
       font-weight: 700;
