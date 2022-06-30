@@ -43,10 +43,10 @@ node_modules
 package.json  
 .gitignore  
 build  
-├── public  
-│       favicon.ico  
-│       index.html  
-│       manifest.json  
+    public  
+       favicon.ico  
+       index.html  
+       manifest.json  
 └── src  
         App.js  
         index.css  
