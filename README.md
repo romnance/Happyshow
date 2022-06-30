@@ -4,6 +4,11 @@ Happy Shows is a simple web app that integrates with [TVMaze](https://www.tvmaze
 
 Can be used for searching your favourite tv shows, reading the info about show and checking the schedule for upcoming episodes.
 
+Search for your favourite TV shows from the main page, add shows to "My Shows" list.  
+To go back to default-page view after you're done with searching, click on "Happy Shows".
+
+Click on show Image or show name to see detailed info.
+
 [Check hosted app online](https://happyshow.vercel.app/)
 
 # To run on localhost 
