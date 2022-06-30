@@ -43,14 +43,14 @@ node_modules
 package.json  
 .gitignore  
 build  
-    public  
-       favicon.ico  
-       index.html  
-       manifest.json  
-└── src  
-        App.js  
-        index.css  
-        index.js  
+public  
+       └── favicon.ico  
+       └── index.html  
+       └── manifest.json  
+src  
+        └── App.js  
+        └── index.css  
+        └── index.js  
 
 
 We can see all the "dependencies" and "devDependencies" required by our React app in node_modules. 
