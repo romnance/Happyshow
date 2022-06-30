@@ -136,17 +136,35 @@ const ShowPage = () => {
                 </p>
               </div>
             </div>
-            <p className={width > breakpoint ? "card-text w-50 m-4 mt-0" : "mt-3"}>
+            <p className={width > breakpoint ? "w-50 m-4 mt-0" : "mt-3"}>
               {singleShow.summary && removeTags(singleShow.summary)}
             </p>
-            {singleShow.status === "Running" ? <h5>Next episode</h5> : null}
             {nextEpisode && (
-              <>
+              <div className="d-flex flex-column">
+                <h5>Next episode</h5>
                 <h5 className="text-success">{nextEpisode.name}</h5>
-                <p className="card-text">
-                  <CalendarFill /> {nextEpisode.airtime}, {nextEpisode.airdate}
-                </p>
-              </>
+                <div className="d-flex flex-row w-100 mb-2">
+                  <i
+                    style={{
+                      boxSizing: "border-box",
+                      border: "none",
+                      backgroundColor: "white",
+                      height: "fit-content",
+                    }}
+                  >
+                    <CalendarFill />
+                  </i>
+                  <p
+                    style={{
+                      alignSelf: "flex-start",
+                      marginTop: "0.1em",
+                      marginLeft: "0.3em",
+                    }}
+                  >
+                    {nextEpisode.airtime} {nextEpisode.airdate}
+                  </p>
+                </div>
+              </div>
             )}
           </div>
         </div>

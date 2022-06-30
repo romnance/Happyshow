@@ -19,12 +19,12 @@ function MyShows() {
   return (
     <div className="container m-1">
       <h1>My shows</h1>
-      <div className="d-flex flex-wrap w-100 justify-content-between mt-3">
+      <div className="d-flex flex-wrap w-100 mt-3">
         {items?.map((item) => (
           <ShowItem key={item.id} item={item} cb={getShows} />
         ))}
       </div>
-      <UpcomingShows />
+      {items && <UpcomingShows items={items} />}
     </div>
   );
 }

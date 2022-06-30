@@ -26,6 +26,7 @@ const ShowItem = ({ item, cb }) => {
         boxSizing: "borderBox",
         maxWidth: "calc(210px + 2rem)",
         marginBottom: "4%",
+        marginRight: "2%",
       }}
     >
       <div className="card-body">

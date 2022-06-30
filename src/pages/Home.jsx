@@ -37,6 +37,8 @@ function Home() {
     getDefaultShows();
   }, []);
 
+  if (!shows && !defaultShows) return <Loader />;
+
   return (
     <>
       <Form onSubmit={handleOnSubmit} style={{ maxWidth: "340px" }}>
@@ -49,21 +51,19 @@ function Home() {
         />
       </Form>
       {defaultShows && !shows ? (
-        <div className="d-flex flex-wrap w-100 justify-content-between mt-3">
+        <div className="d-flex flex-wrap w-100 mt-3">
           {defaultShows?.map((item) => (
             <ShowItem item={item} key={item.id} />
           ))}
         </div>
       ) : null}
       {shows && !defaultShows ? (
-        <div className="d-flex flex-wrap w-100 justify-content-between mt-3">
+        <div className="d-flex flex-wrap w-100 mt-3">
           {shows.map((item) => (
             <ShowItem item={item.show} key={item.show.id} />
           ))}
         </div>
-      ) : (
-        <Loader />
-      )}
+      ) : null}
     </>
   );
 }

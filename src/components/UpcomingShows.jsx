@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CalendarFill } from "react-bootstrap-icons";
 
-function UpcomingShows() {
+function UpcomingShows({ items }) {
   const [nextEpisode, setNextEpisode] = useState();
   const [nextEpisodes, setNextEpisodes] = useState([]);
 
@@ -17,15 +17,17 @@ function UpcomingShows() {
   };
 
   function getShows() {
-    const items = JSON.parse(localStorage.getItem("items"));
     if (items) {
       items.map((item) => getNextEpisode(item));
     }
   }
 
   useEffect(() => {
-    getShows();
-  }, []);
+    if (items) {
+      setNextEpisodes([]);
+      getShows();
+    }
+  }, [items]);
 
   useEffect(() => {
     const episodes = nextEpisodes;
@@ -40,19 +42,35 @@ function UpcomingShows() {
     setNextEpisodes(uniq);
   }, [nextEpisode]);
 
-  console.log(nextEpisodes[0]);
-
   return (
-    <div className="">
+    <div>
       <h1 className="mb-3">Upcoming shows</h1>
-      <ul className="">
+      <ul className="list-group">
         {nextEpisodes.map((item) => (
-          <li>
+          <li className="list-group-item pt-4">
             <h5>{item.showName}</h5>
             <h5 className="text-success">Episode: {item.name}</h5>
-            <p className="card-text">
-              <CalendarFill /> {item.airtime} {item.airdate}
-            </p>
+            <div className="d-flex flex-row w-100">
+              <i
+                style={{
+                  boxSizing: "border-box",
+                  border: "none",
+                  backgroundColor: "white",
+                  height: "fit-content",
+                }}
+              >
+                <CalendarFill />
+              </i>
+              <p
+                style={{
+                  alignSelf: "flex-start",
+                  marginTop: "0.1em",
+                  marginLeft: "0.3em",
+                }}
+              >
+                {item.airtime} {item.airdate}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
