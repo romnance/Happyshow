@@ -19,6 +19,11 @@ function MyShows() {
   return (
     <div className="container m-1">
       <h1>My shows</h1>
+      {items.length < 1 ? (
+        <div class="alert alert-info mt-3" role="alert" style={{ width: "fit-content" }}>
+          You dont have any favourite show yet
+        </div>
+      ) : null}
       <div className="d-flex flex-wrap w-100 mt-3">
         {items?.map((item) => (
           <ShowItem key={item.id} item={item} cb={getShows} />

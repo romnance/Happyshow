@@ -44,7 +44,12 @@ function UpcomingShows({ items }) {
 
   return (
     <div>
-      <h1 className="mb-3">Upcoming shows</h1>
+      {items.length > 0 && <h1 className="mb-3">Upcoming shows</h1>}
+      {items.length > 0 && nextEpisodes.length < 1 ? (
+        <div class="alert alert-info" role="alert">
+          Your favorite shows don't have new episodes coming up
+        </div>
+      ) : null}
       <ul className="list-group">
         {nextEpisodes.map((item) => (
           <li className="list-group-item pt-4">

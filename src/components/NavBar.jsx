@@ -1,7 +1,10 @@
 import React from "react";
-import { Nav, Navbar, Button } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import { Nav, Navbar } from "react-bootstrap";
 
 function NavBar() {
+  let location = useLocation();
+
   return (
     <Navbar
       expand="lg"
@@ -19,13 +22,23 @@ function NavBar() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
           <Nav.Item>
-            <Nav.Link href="/" style={{ color: "black", fontWeight: "600" }}>
-              <Button className="btn btn-secondary">All Shows</Button>
+            <Nav.Link
+              href="/"
+              style={{ fontWeight: "600", marginRight: "0.2em" }}
+              className={location?.pathname === "/" ? "nav-link active" : "nav-link"}
+            >
+              All Shows
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/myshows" style={{ color: "black", fontWeight: "600" }}>
-              <Button className="btn btn-secondary">My Shows</Button>
+            <Nav.Link
+              href="/myshows"
+              style={{ fontWeight: "600" }}
+              className={
+                location?.pathname === "/myshows" ? "nav-link active" : "nav-link"
+              }
+            >
+              My Shows
             </Nav.Link>
           </Nav.Item>
         </Nav>

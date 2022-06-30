@@ -31,16 +31,18 @@ const ShowItem = ({ item, cb }) => {
     >
       <div className="card-body">
         <Link to={`/showpage/${item.id}`}>
-          <img src={item.image?.medium ? item.image.medium : ""} alt={item.name} />
+          <img
+            className="rounded mx-auto d-block"
+            src={item.image?.medium ? item.image.medium : ""}
+            alt={item.name}
+          />
         </Link>
         <div className="d-flex flex-row justify-content-between w-100">
-          <Link to={`/showpage/${item.id}`} style={{ textDecoration: "none" }}>
-            <h5
-              className="card-title mt-1"
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              {item.name}
-            </h5>
+          <Link
+            to={`/showpage/${item.id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <h5 className="card-title mt-1">{item.name}</h5>
           </Link>
           <button
             style={{

@@ -30,7 +30,7 @@ function Home() {
 
   const getDefaultShows = async () => {
     const { data } = await axios.get(`https://api.tvmaze.com/shows?page=1`);
-    setDefaultShows(data.slice(0, 50));
+    setDefaultShows(data.slice(0, 60));
   };
 
   useEffect(() => {
