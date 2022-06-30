@@ -36,7 +36,7 @@ When you’re ready to deploy to production, running npm run build will create a
 
 In order not to spend a lot of time on styles, I used bootstrap. Some components have been customized with inline CSS.
 
-The file structure is divided into folders with pages, components, helpers (js files)
+## File structure
 
 README.md  
 node_modules  
@@ -48,9 +48,13 @@ public
        └── index.html  
        └── manifest.json  
 src  
-        └── App.js  
+        └── App.js
+        └── components
+        └── helpers
+        └── pages     
         └── index.css  
-        └── index.js  
+        └── index.js 
+
 
 
 We can see all the "dependencies" and "devDependencies" required by our React app in node_modules. 
@@ -58,7 +62,7 @@ These are as specified or seen in package.json file.
 
 Static files are located in the public directory. Files in this directory will retain the same name when deployed to production. Thus, they can be cached at the client-side and improve the overall download times.
 
-All of the dynamic components will be located in the src. To ensure that, at the client side, only the most recent version is downloaded and not the cached copy, Webpack will generally have the updated files a unique file name in the final build.
+All of the dynamic components will be located in the src. The file structure is divided into folders with pages, components, helpers (js files). To ensure that, at the client side, only the most recent version is downloaded and not the cached copy, Webpack will generally have the updated files a unique file name in the final build.
 
 You can see files like App.js which is main JS component. index.js is the entry point for App. 
 
