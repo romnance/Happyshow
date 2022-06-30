@@ -38,19 +38,19 @@ In order not to spend a lot of time on styles, I used bootstrap. Some components
 
 The file structure is divided into folders with pages, components, helpers (js files)
 
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-├── build
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   └── manifest.json
-└── src
-    ├── App.js
-    ├── index.css
-    └── index.js
+├── README.md  
+├── node_modules  
+├── package.json  
+├── .gitignore  
+├── build  
+├── public  
+│   ├── favicon.ico  
+│   ├── index.html  
+│   └── manifest.json  
+└── src  
+    ├── App.js  
+    ├── index.css  
+    └── index.js  
 
 
 We can see all the "dependencies" and "devDependencies" required by our React app in node_modules. 
