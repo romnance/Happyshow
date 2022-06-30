@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../components/Loader";
 import ShowItem from "../components/ShowItem";
-import { Form, FormControl } from "react-bootstrap";
+import { Form, FormControl, Button } from "react-bootstrap";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -41,7 +41,11 @@ function Home() {
 
   return (
     <>
-      <Form onSubmit={handleOnSubmit} style={{ maxWidth: "340px" }}>
+      <Form
+        onSubmit={handleOnSubmit}
+        style={{ maxWidth: "340px" }}
+        className="d-flex flex-row"
+      >
         <FormControl
           type="text"
           placeholder="Search"
@@ -49,6 +53,9 @@ function Home() {
           value={searchTerm}
           onChange={handleOnChange}
         />
+        <Button variant="outline-secondary" type="submit" className="mt-2">
+          Submit
+        </Button>
       </Form>
       {defaultShows && !shows ? (
         <div className="d-flex flex-wrap w-100 mt-3">
