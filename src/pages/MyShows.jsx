@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ShowItem from "../components/ShowItem";
+import UpcomingShows from "../components/UpcomingShows";
 
 function MyShows() {
   const [items, setItems] = useState([]);
@@ -19,10 +20,11 @@ function MyShows() {
     <div className="container m-1">
       <h1>My shows</h1>
       <div className="d-flex flex-wrap w-100 justify-content-between mt-3">
-        {items.map((item) => (
+        {items?.map((item) => (
           <ShowItem key={item.id} item={item} cb={getShows} />
         ))}
       </div>
+      <UpcomingShows />
     </div>
   );
 }

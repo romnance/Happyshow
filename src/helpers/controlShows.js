@@ -20,6 +20,8 @@ function checkShow(id) {
   return false;
 }
 
+
+
 const controlShows = {
   addShow,
   removeShow,

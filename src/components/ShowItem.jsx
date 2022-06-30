@@ -18,6 +18,7 @@ const ShowItem = ({ item, cb }) => {
     if (cb) cb();
   };
 
+
   return (
     <div
       className="card"
@@ -29,13 +30,7 @@ const ShowItem = ({ item, cb }) => {
     >
       <div className="card-body">
         <Link to={`/showpage/${item.id}`}>
-          <img
-            src={
-              item.image.medium ||
-              "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
-            }
-            alt={item.name}
-          />
+          <img src={item.image?.medium ? item.image.medium : ""} alt={item.name} />
         </Link>
         <div className="d-flex flex-row justify-content-between w-100">
           <Link to={`/showpage/${item.id}`} style={{ textDecoration: "none" }}>

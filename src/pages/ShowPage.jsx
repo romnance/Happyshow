@@ -30,7 +30,6 @@ const ShowPage = () => {
     if (singleShow.status === "Running") {
       const link = singleShow?._links.nextepisode?.href;
       const nextepisode = await axios.get(link);
-      console.log(nextepisode.data);
       setNextEpisode(nextepisode.data);
     }
     return false;
