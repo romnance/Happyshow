@@ -20,7 +20,11 @@ function MyShows() {
     <div className="container m-1">
       <h1>My shows</h1>
       {items.length < 1 ? (
-        <div class="alert alert-info mt-3" role="alert" style={{ width: "fit-content" }}>
+        <div
+          className="alert alert-info mt-3"
+          role="alert"
+          style={{ width: "fit-content" }}
+        >
           You dont have any favourite show yet
         </div>
       ) : null}

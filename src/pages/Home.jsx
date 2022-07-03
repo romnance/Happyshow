@@ -17,7 +17,10 @@ function Home() {
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${searchTerm}`
     );
-    setShows(data);
+    if (data) {
+      setShows(data);
+      setSearchTerm("");
+    }
   };
 
   const handleOnSubmit = (e) => {
