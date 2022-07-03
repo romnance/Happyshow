@@ -5,6 +5,7 @@ import ShowItem from "../components/ShowItem";
 import { Form, FormControl, Button } from "react-bootstrap";
 
 function Home() {
+  const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [shows, setShows] = useState();
   const [defaultShows, setDefaultShows] = useState();
@@ -14,12 +15,16 @@ function Home() {
   };
 
   const searchShows = async (searchTerm) => {
-    const { data } = await axios.get(
-      `https://api.tvmaze.com/search/shows?q=${searchTerm}`
-    );
-    if (data) {
-      setShows(data);
-      setSearchTerm("");
+    try {
+      const { data } = await axios.get(
+        `https://api.tvmaze.com/search/shows?q=${searchTerm}`
+      );
+      if (data) {
+        setShows(data);
+        setSearchTerm("");
+      }
+    } catch (err) {
+      setError(err);
     }
   };
 
@@ -32,18 +37,27 @@ function Home() {
   };
 
   const getDefaultShows = async () => {
-    const { data } = await axios.get(`https://api.tvmaze.com/shows?page=1`);
-    setDefaultShows(data.slice(0, 60));
+    try {
+      const { data } = await axios.get(`https://api.tvmaze.com/shows?page=1`);
+      setDefaultShows(data.slice(0, 60));
+    } catch (err) {
+      setError(err);
+    }
+  };
+
+  const getErrorView = () => {
+    return <div>Oh no! Something went wrong. {error.message}</div>;
   };
 
   useEffect(() => {
     getDefaultShows();
   }, []);
 
-  if (!shows && !defaultShows) return <Loader />;
+  if (!shows && !defaultShows && !error) return <Loader />;
 
   return (
     <>
+      {error && getErrorView()}
       <Form
         onSubmit={handleOnSubmit}
         style={{ maxWidth: "340px" }}
