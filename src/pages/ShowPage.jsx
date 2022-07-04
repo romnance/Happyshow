@@ -33,6 +33,7 @@ const ShowPage = () => {
       }, [id]);
 
       const getNextEpisode = async (item) => {
+        if (!item.status) return null;
         try {
           if (item.status === "Running") {
             const link = item?._links.nextepisode?.href;
@@ -46,9 +47,7 @@ const ShowPage = () => {
       };
 
       useEffect(() => {
-        if (singleShow) {
-          getNextEpisode();
-        }
+        if (singleShow) getNextEpisode(singleShow);
       }, [singleShow]);
 
       useEffect(() => {
@@ -154,7 +153,7 @@ const ShowPage = () => {
                 <p className={width > breakpoint ? "w-50 m-4 mt-0" : "mt-3"}>
                   {singleShow.summary && removeTags(singleShow.summary)}
                 </p>
-
+                {singleShow && !nextEpisode && error ? getErrorView() : null}
                 {nextEpisode && (
                   <div className="d-flex flex-column">
                     <h5>Next episode</h5>
